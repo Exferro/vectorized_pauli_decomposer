@@ -1,0 +1,2 @@
+from .slow_dense_decompose import slow_dense_decompose
+from .fast_dense_decompose import fast_dense_decompose
