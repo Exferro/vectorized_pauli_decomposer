@@ -1,8 +1,8 @@
 import numpy as np
 
-from pauli_decomposer.core.conversions import pauli_idx2pauli_list
+from vectorized_pauli_decomposer.core.conversions import pauli_idx2pauli_list
 
-from pauli_decomposer.decomposers.fast_dense_decompose import fast_dense_decompose
+from vectorized_pauli_decomposer.decomposers.fast_dense_decompose import fast_dense_decompose
 
 
 if __name__ == '__main__':
