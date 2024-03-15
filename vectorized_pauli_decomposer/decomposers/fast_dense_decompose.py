@@ -1,6 +1,6 @@
 import numpy as np
 
-from ..core.popcount import popcount
+from ..core.popcount import popcount, popcount_
 
 
 def fast_dense_decompose(target: np.ndarray = None,
@@ -21,7 +21,7 @@ def fast_dense_decompose(target: np.ndarray = None,
                             (pauli_indices.shape[0], 1))
     non_zero_cols = np.bitwise_xor(np.reshape(pauli_xy_masks, (-1, 1)),
                                    np.reshape(np.arange(2**qubit_num), (1, -1)))
-    non_zero_vals = (((-1) ** popcount(np.bitwise_and(non_zero_cols, np.expand_dims(pauli_yz_masks, axis=1))))
+    non_zero_vals = (((-1) ** popcount_(np.bitwise_and(non_zero_cols, np.expand_dims(pauli_yz_masks, axis=1))))
                      * ((1j)**popcount(np.expand_dims(pauli_y_masks, axis=1))))
     target_vals = target[non_zero_cols, non_zero_rows]
 
