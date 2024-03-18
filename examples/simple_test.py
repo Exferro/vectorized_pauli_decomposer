@@ -14,5 +14,5 @@ if __name__ == '__main__':
         target = np.random.normal(size=(2 ** qubit_num, 2 ** qubit_num)) + 1j * np.random.normal(
             size=(2 ** qubit_num, 2 ** qubit_num))
         fast_coeffs = fast_dense_decompose(target=target,
-                                           pauli_indices=pauli_indices,
+                                           basis_pauli_indices=pauli_indices,
                                            qubit_num=qubit_num)

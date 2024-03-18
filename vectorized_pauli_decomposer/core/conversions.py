@@ -27,15 +27,15 @@ def pauli_idx2pauli_list(pauli_idx: np.ndarray = None,
 
 
 def pauli_idx2yz_mask_xy_mask(pauli_idx: np.ndarray = None,
-                                qubit_num: int = None):
+                              qubit_num: int = None):
     assert qubit_num is not None
 
     return np.bitwise_and(pauli_idx, 2**qubit_num - 1), pauli_idx >> qubit_num
 
 
-def yz_mask_xy_mask2pauli_idx(pauli_yz_mask: np.ndarray = None,
-                               pauli_xy_mask: np.ndarray = None,
-                               qubit_num: int = None):
+def yz_mask_xy_mask2pauli_idx(yz_mask: np.ndarray = None,
+                              xy_mask: np.ndarray = None,
+                              qubit_num: int = None):
     assert qubit_num is not None
 
-    return pauli_yz_mask + (pauli_xy_mask << qubit_num)
+    return yz_mask + (xy_mask << qubit_num)
